@@ -22,6 +22,26 @@ that end in `.gz`
 
 Note that there is no guarantee of output. If you give a low percentage and a small file, there's a chance nothing will be randomly chosen. 
 
+## Examples
+
+~~~
+# Pick about 10% of the lines from bigfile.txt
+samplelines -p 10 bigfile.txt
+
+# Ditto, but get a maximum of 100 lines
+samplelines -p 10 -m 10 bigfile.txt
+
+# This time, get about one out of every 500 lines
+samplelines -1 500 -m 10 bigfile.txt
+
+# Get about 2% of the lines from a set of gzipped files
+samplelines -p 2 *.txt.gz
+
+# Ditto, but don't get more than 10_000 lines or
+#  run for more than five seconds
+samplelines -p 2 -t 5 -m 10000 *.txt.gz
+~~~
+
 
 ## Installation
 
