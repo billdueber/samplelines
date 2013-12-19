@@ -1,4 +1,5 @@
 require 'slop'
+require 'zlib'
 require 'samplelines/version'
 
 class Samplelines
@@ -22,7 +23,11 @@ class Samplelines
         when 'STDERR'
           self.files.push $stderr
         else
-          self.files.push File.open(fn, 'r:utf-8')
+          f = File.open(fn, 'r:utf-8')
+          if fn =~ /\.gz\Z/
+            f = Zlib::GzipReader.new(f)
+          end
+          self.files.push f
         end
       end
     end
@@ -98,7 +103,7 @@ class Samplelines
   
   def create_slop!
     return Slop.new(:strict=>true) do
-      banner "Samplelines [options] [filename(s) and/or STDIN and/or STDERR]"
+      banner "samplelines [options] [filename(s) and/or STDIN and/or STDERR]"
 
       on 'v', 'version', 'print version info'
       on 'h', 'help',    'print usage information'
