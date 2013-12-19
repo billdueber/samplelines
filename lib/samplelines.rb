@@ -34,9 +34,7 @@ class Samplelines
       end
     end
   end
-  
-  VERSION = '0.1.0'
-  
+    
   attr_accessor :options, :slop, :orig_argv, :remaining_argv, :input
   
   def initialize(argv = ARGV)
