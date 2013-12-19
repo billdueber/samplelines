@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+$:.unshift 'lib'
+
+require 'samplelines'
+
+
+cmdline = Samplelines.new(ARGV)
+
+begin
+  cmdline.execute
+rescue => e
+  $stderr.puts "#{e}"
+  exit 1
+end
+  
+
+ 
