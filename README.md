@@ -15,7 +15,7 @@ samplelines [options] [filename(s) and/or STDIN and/or STDERR]
 ~~~
 
 Either `-p` or `-1` is required. Filenames (or the special strings STDIN
-and STDERR) will be processed in the order to specify them.
+and STDERR) will be processed in the order you specify them.
 
 As a convenience, `samplelines` will automatically deal with gzipped files 
 that end in `.gz`
