@@ -1,5 +1,11 @@
 # samplelines
 
+----
+
+**Deprecated and archived**. Turns out there's a standard `shuf` command in unix. Now I feel dumb.
+
+---
+
 A simple command line tool to take samples lines from a file or set of files.
 
 ~~~
